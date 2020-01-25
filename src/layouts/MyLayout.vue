@@ -15,7 +15,7 @@
           Quasar App
         </q-toolbar-title>
 
-        <div>Quasar v{{ $q.version }}</div>
+        <qm-lang-selector />
       </q-toolbar>
     </q-header>
 
@@ -91,8 +91,14 @@
 </template>
 
 <script>
+import QmLangSelector from 'components/QmLangSelector'
+
 export default {
   name: 'MyLayout',
+
+  components: {
+    QmLangSelector
+  },
 
   data () {
     return {

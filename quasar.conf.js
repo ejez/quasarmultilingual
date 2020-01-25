@@ -7,6 +7,9 @@ module.exports = function (ctx) {
     // --> boot files are part of "main.js"
     // https://quasar.dev/quasar-cli/cli-documentation/boot-files
     boot: [
+      // boot file that handles app internationalization
+      // https://quasar.dev/options/app-internationalization
+      'i18n'
     ],
 
     // https://quasar.dev/quasar-cli/quasar-conf-js#Property%3A-css
@@ -30,7 +33,7 @@ module.exports = function (ctx) {
     // https://quasar.dev/quasar-cli/quasar-conf-js#Property%3A-framework
     framework: {
       iconSet: 'material-icons', // Quasar icon set
-      lang: 'en-us', // Quasar language pack
+      // lang: 'en-us', // Quasar language pack
 
       // Possible values for "all":
       // * 'auto' - Auto-import needed Quasar components & directives
@@ -45,7 +48,11 @@ module.exports = function (ctx) {
       directives: [],
 
       // Quasar plugins
-      plugins: []
+      plugins: [
+        'Cookies',
+        'Meta'
+      ]
+
     },
 
     // https://quasar.dev/quasar-cli/cli-documentation/supporting-ie
@@ -54,7 +61,7 @@ module.exports = function (ctx) {
     // Full list of options: https://quasar.dev/quasar-cli/quasar-conf-js#Property%3A-build
     build: {
       scopeHoisting: true,
-      vueRouterMode: 'hash', // available values: 'hash', 'history'
+      vueRouterMode: 'history', // available values: 'hash', 'history'
       showProgress: true,
       gzip: false,
       analyze: false,
@@ -73,7 +80,10 @@ module.exports = function (ctx) {
             formatter: require('eslint').CLIEngine.getFormatter('stylish')
           }
         })
-      }
+      },
+
+      // rtl support
+      rtl: true
     },
 
     // Full list of options: https://quasar.dev/quasar-cli/quasar-conf-js#Property%3A-devServer
@@ -139,7 +149,6 @@ module.exports = function (ctx) {
       // noIosLegacyBuildFlag: true, // uncomment only if you know what you are doing
       id: 'org.cordova.quasar.app'
     },
-
 
     // Full list of options: https://quasar.dev/quasar-cli/developing-capacitor-apps/configuring-capacitor
     capacitor: {

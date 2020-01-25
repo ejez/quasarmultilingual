@@ -1,0 +1,11 @@
+[
+  {
+    "isoName": "ar",
+    "nativeName": "العربية"
+  },
+  {
+    "isoName": "en",
+    "nativeName": "English",
+    "quasarLanguage": "en-us"
+  }
+]

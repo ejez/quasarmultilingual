@@ -1,7 +1,9 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-
-import routes from './routes'
+import { Quasar, Cookies } from 'quasar'
+import getRoutes from './routes/routes'
+import setAppLanguage from 'src/i18n/set-app-language'
+import { i18n } from 'boot/i18n'
 
 Vue.use(VueRouter)
 
@@ -14,7 +16,9 @@ Vue.use(VueRouter)
  * with the Router instance.
  */
 
-export default function (/* { store, ssrContext } */) {
+export default async function ({ ssrContext }) {
+  const routes = await getRoutes(ssrContext)
+
   const Router = new VueRouter({
     scrollBehavior: () => ({ x: 0, y: 0 }),
     routes,
@@ -24,6 +28,15 @@ export default function (/* { store, ssrContext } */) {
     // quasar.conf.js -> build -> publicPath
     mode: process.env.VUE_ROUTER_MODE,
     base: process.env.VUE_ROUTER_BASE
+  })
+
+  const cookies = process.env.SERVER
+    ? Cookies.parseSSR(ssrContext)
+    : Cookies
+
+  Router.beforeEach((to, from, next) => {
+    const toLang = to.path.split('/')[1]
+    setAppLanguage({ toLang, quasar: Quasar, i18n, cookies }).then(() => next())
   })
 
   return Router

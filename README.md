@@ -1,26 +1,29 @@
-# Quasarmultilingual (quasarmultilingual)
+# Multilingual Quasar
 
-A Quasar Framework app
+This project shows how to add multi-lingual support to your quasar projects.
 
-## Install the dependencies
-```bash
-yarn
-```
+To learn how it is achieved, please compare repository `master` with the initial tag `v0.1.0`:
 
-### Start the app in development mode (hot-code reloading, error reporting, etc.)
-```bash
-quasar dev
-```
+https://github.com/ejez/quasarmultilingual/compare/v0.1.0..master
 
-### Lint the files
-```bash
-yarn run lint
-```
+The added code is full of comments and explanations.
 
-### Build the app for production
-```bash
-quasar build
-```
+## Features
 
-### Customize the configuration
-See [Configuring quasar.conf.js](https://quasar.dev/quasar-cli/quasar-conf-js).
+- [vue-i18n](https://kazupon.github.io/vue-i18n/)
+
+- SEO with [hreflang links](https://support.google.com/webmasters/answer/189077?hl=en)
+
+- Lazy loading of quasar language packs and vue-i18n messages
+
+- Multi-lingual routes (urls) using language prefix
+
+- Auto-detection of app language from url language prefix or cookie (or fallback to default language)
+
+- Language selector component
+
+- If the language is changed using the language selector, a corresponding page translation will be shown if it exists in the target language.
+
+- Ability to use a quasar language pack for a different language/locale, for example you can use quasar 'en-us' language pack for 'en' app language (you are not forced to use 'en-us' as an app language)
+
+- ssr support
