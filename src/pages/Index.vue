@@ -9,6 +9,7 @@ import i18nMixin from 'src/i18n/i18n-mixin.js'
 
 export default {
   name: 'PageIndex',
-  mixins: [i18nMixin]
+  mixins: [i18nMixin],
+  data () { return { i18nMsgPath: 'pages/index' } }
 }
 </script>

@@ -10,12 +10,12 @@ export default {
   watch: {
     // when the app language changes load this component i18n messages
     locale: function (locale) {
-      loadI18nMsgObj({ locale, msgPath: 'pages/index', i18n: this.$i18n })
+      loadI18nMsgObj({ locale, msgPath: this.i18nMsgPath, i18n: this.$i18n })
     }
   },
 
   // when this component is created load this component i18n messages
   created: function () {
-    loadI18nMsgObj({ locale: this.$i18n.locale, msgPath: 'pages/index', i18n: this.$i18n })
+    loadI18nMsgObj({ locale: this.$i18n.locale, msgPath: this.i18nMsgPath, i18n: this.$i18n })
   }
 }
