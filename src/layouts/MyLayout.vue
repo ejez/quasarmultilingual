@@ -26,6 +26,37 @@
       content-class="bg-grey-2"
     >
       <q-list>
+        <q-item
+          clickable
+          :to="`/${$q.lang.isoName}`"
+          exact
+        >
+          <q-item-section avatar>
+            <q-icon name="house" />
+          </q-item-section>
+          <q-item-section>
+            <q-item-label>{{ $t('Home') }}</q-item-label>
+            <q-item-label caption>
+              {{ $t('Home') }}
+            </q-item-label>
+          </q-item-section>
+        </q-item>
+        <q-item
+          clickable
+          :to="`/${$q.lang.isoName}/${aboutPageRoutepaths[$q.lang.isoName]}`"
+          exact
+        >
+          <q-item-section avatar>
+            <q-icon name="info" />
+          </q-item-section>
+          <q-item-section>
+            <q-item-label>{{ $t('About') }}</q-item-label>
+            <q-item-label caption>
+              {{ $t('About') }}
+            </q-item-label>
+          </q-item-section>
+        </q-item>
+
         <q-item-label header>
           Essential Links
         </q-item-label>
@@ -146,7 +177,11 @@ export default {
 
   data () {
     return {
-      leftDrawerOpen: false
+      leftDrawerOpen: false,
+      aboutPageRoutepaths: {
+        ar: 'من_نحن',
+        en: 'about-us'
+      }
     }
   }
 }

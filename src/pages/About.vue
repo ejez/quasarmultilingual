@@ -1,5 +1,6 @@
 <template>
   <q-page>
-    {{ $t('About') }}
+    <div>{{ $t('About') }}</div>
+    <div>{{ $t('Learn more') }}</div>
   </q-page>
 </template>

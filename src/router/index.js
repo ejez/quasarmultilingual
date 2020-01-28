@@ -36,7 +36,8 @@ export default async function ({ ssrContext }) {
 
   Router.beforeEach((to, from, next) => {
     const toLang = to.path.split('/')[1]
-    setAppLanguage({ toLang, quasar: Quasar, i18n, cookies }).then(() => next())
+    setAppLanguage({ toLang, quasar: Quasar, i18n, cookies, routeMeta: to.meta })
+      .then(() => next())
   })
 
   return Router
