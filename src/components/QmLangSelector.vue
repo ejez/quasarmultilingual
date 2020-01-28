@@ -28,15 +28,17 @@ export default {
       // home page of the new language.
       // The router afterwards will update quasar and vue-i18n languages.
       set: function (targetLang) {
-        const translationPath = this.$route.meta.translations
-          ? this.$route.meta.translations[targetLang.isoName]
-          : null
+        if (targetLang.isoName !== this.lang.isoName) {
+          const translationPath = this.$route.meta.translations
+            ? this.$route.meta.translations[targetLang.isoName]
+            : null
 
-        const targetPath = translationPath
-          ? `/${targetLang.isoName}/${translationPath}`
-          : `/${targetLang.isoName}`
+          const targetPath = translationPath
+            ? `/${targetLang.isoName}/${translationPath}`
+            : `/${targetLang.isoName}`
 
-        this.$router.push(targetPath)
+          this.$router.push(targetPath)
+        }
       }
     }
   },
