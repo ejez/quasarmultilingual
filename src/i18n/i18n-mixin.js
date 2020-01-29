@@ -18,4 +18,10 @@ export default {
   created: function () {
     loadI18nMsgObj({ locale: this.$i18n.locale, msgPath: this.i18nMsgPath, i18n: this.$i18n })
   }
+
+  // Uncomment the following if you want component based localization
+  // https://kazupon.github.io/vue-i18n/guide/component.html
+  // in this case this.$i18n will refer to component VueI18n instance instead of
+  // root instance
+  // i18n: { messages: {} }
 }
