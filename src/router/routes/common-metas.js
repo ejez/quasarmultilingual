@@ -8,7 +8,10 @@ export default {
       ar: '',
       en: ''
     },
-    defaultTranslation: 'ar'
+    defaultTranslation: 'ar',
+    // path to vue-i18n message object file relative to
+    // 'src/i18n/vue-i18n-messages/<locale>/'
+    i18nMessage: 'pages/index'
   },
 
   about: {
@@ -20,9 +23,6 @@ export default {
       en: 'about-us'
     },
     // used for x-default hreflang
-    defaultTranslation: 'ar',
-    // path to vue-i18n message object file relative to
-    // 'src/i18n/vue-i18n-messages/<locale>/'
-    i18nMessage: 'pages/about'
+    defaultTranslation: 'ar'
   }
 }
