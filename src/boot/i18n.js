@@ -14,11 +14,10 @@ const i18n = new VueI18n({
 
 const appLanguagesIsoNames = appLanguages.map(lang => lang.isoName)
 
-export default ({ app, ssrContext }) => {
-  // get request url
-  const url = process.env.SERVER
-    ? ssrContext.url
-    : window.location.pathname
+export default ({ app, ssrContext, urlPath }) => {
+  // get language prefix if any
+  const urlObj = new URL(urlPath, 'http://www.example.com')
+  const langPrefix = urlObj.pathname.split('/')[1]
 
   const cookies = process.env.SERVER
     ? Cookies.parseSSR(ssrContext)
@@ -29,8 +28,8 @@ export default ({ app, ssrContext }) => {
   // if it was previously set. if no language cookie we fall back to the app
   // default language.
   let toLang = ''
-  if (appLanguagesIsoNames.includes(url.split('/')[1])) {
-    toLang = url.split('/')[1]
+  if (appLanguagesIsoNames.includes(langPrefix)) {
+    toLang = langPrefix
   } else {
     toLang = cookies.has('app_lang')
       ? cookies.get('app_lang')
