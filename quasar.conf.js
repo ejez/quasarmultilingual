@@ -50,6 +50,7 @@ module.exports = function (ctx) {
       // Quasar plugins
       plugins: [
         'Cookies',
+        'LoadingBar',
         'Meta'
       ]
 
