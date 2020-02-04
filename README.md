@@ -8,7 +8,7 @@ https://github.com/ejez/quasarmultilingual/compare/v0.1.0..master
 
 The added code is full of comments and explanations.
 
-Demo [here](https://goofy-leakey-34b858.netlify.com)
+Demo [here](https://quasarmultilingual.netlify.com)
 
 ## Features
 
