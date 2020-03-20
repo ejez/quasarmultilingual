@@ -1,6 +1,6 @@
 // to avoid importing the same vue-i18n message object multiple times,
-// we use this variable to hold loaded message objects for future use
-let loadedI18nMsgObjs = {}
+// we use this to hold loaded message objects for future use
+const loadedI18nMsgObjs = {}
 
 // async function that lazily loads i18n messages of the provided locale.
 

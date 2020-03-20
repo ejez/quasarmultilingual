@@ -15,6 +15,8 @@
 import appLanguages from 'src/i18n/app-languages.json'
 
 export default {
+  name: 'QmLangSelector',
+
   computed: {
     // active selector language
     lang: {

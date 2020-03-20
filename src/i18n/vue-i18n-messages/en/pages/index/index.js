@@ -1,3 +1,3 @@
 export default {
-  'Welcome': 'Welcome to our website'
+  Welcome: 'Welcome to our website'
 }

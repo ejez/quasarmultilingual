@@ -3,5 +3,5 @@ import en from './en'
 
 export default {
   ar,
-  'en': en
+  en
 }

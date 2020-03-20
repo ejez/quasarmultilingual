@@ -1,8 +1,8 @@
 import appLanguages from 'src/i18n/app-languages.json'
 
 // to avoid importing the same language pack multiple times,
-// we use this variable to hold loaded language packs for future use
-let loadedQLangPacks = {}
+// we use this to hold loaded language packs for future use
+const loadedQLangPacks = {}
 
 // async function that lazily loads a quasar language pack of the provided language.
 export default async function ({ appLang, quasar }) {
